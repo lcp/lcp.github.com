@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="urfkill Reference Manual" link="index.html" author="Ching-Pang Lin" name="urfkill" version="2" language="c">
+  <chapters>
+    <sub name="D-Bus API Reference" link="ref-dbus.html">
+      <sub name="org.freedesktop.URfkill" link="URfkill.html"/>
+      <sub name="org.freedesktop.URfkill.Device" link="Device.html"/>
+    </sub>
+    <sub name="liburfkill-glib GObjects" link="liburfkill-glib.html">
+      <sub name="UrfClient" link="UrfClient.html"/>
+      <sub name="UrfDevice" link="UrfDevice.html"/>
+    </sub>
+    <sub name="Index" link="ix01.html"/>
+    <sub name="License" link="license.html"/>
+  </chapters>
+  <functions>
+    <keyword type="" name="Block ()" link="URfkill.html#URfkill.Block"/>
+    <keyword type="" name="BlockIdx ()" link="URfkill.html#URfkill.BlockIdx"/>
+    <keyword type="" name="EnumerateDevices ()" link="URfkill.html#URfkill.EnumerateDevices"/>
+    <keyword type="" name="IsInhibited ()" link="URfkill.html#URfkill.IsInhibited"/>
+    <keyword type="" name="Inhibit ()" link="URfkill.html#URfkill.Inhibit"/>
+    <keyword type="" name="Uninhibit ()" link="URfkill.html#URfkill.Uninhibit"/>
+    <keyword type="" name="The DeviceAdded signal" link="URfkill.html#URfkill::DeviceAdded"/>
+    <keyword type="" name="The DeviceRemoved signal" link="URfkill.html#URfkill::DeviceRemoved"/>
+    <keyword type="" name="The DeviceChanged signal" link="URfkill.html#URfkill::DeviceChanged"/>
+    <keyword type="" name="The UrfkeyPressed signal" link="URfkill.html#URfkill::UrfkeyPressed"/>
+    <keyword type="" name="The &quot;DaemonVersion&quot; property" link="URfkill.html#URfkill:DaemonVersion"/>
+    <keyword type="" name="The &quot;KeyControl&quot; property" link="URfkill.html#URfkill:KeyControl"/>
+    <keyword type="" name="The Changed signal" link="Device.html#Device::Changed"/>
+    <keyword type="" name="The &quot;index&quot; property" link="Device.html#Device:index"/>
+    <keyword type="" name="The &quot;type&quot; property" link="Device.html#Device:type"/>
+    <keyword type="" name="The &quot;name&quot; property" link="Device.html#Device:name"/>
+    <keyword type="" name="The &quot;soft&quot; property" link="Device.html#Device:soft"/>
+    <keyword type="" name="The &quot;hard&quot; property" link="Device.html#Device:hard"/>
+    <keyword type="macro" name="URF_CLIENT_ERROR" link="UrfClient.html#URF-CLIENT-ERROR:CAPS"/>
+    <keyword type="macro" name="URF_CLIENT_TYPE_ERROR" link="UrfClient.html#URF-CLIENT-TYPE-ERROR:CAPS"/>
+    <keyword type="struct" name="UrfClient" link="UrfClient.html#UrfClient-struct"/>
+    <keyword type="struct" name="UrfClientClass" link="UrfClient.html#UrfClientClass"/>
+    <keyword type="enum" name="enum UrfClientError" link="UrfClient.html#UrfClientError"/>
+    <keyword type="function" name="urf_client_new ()" link="UrfClient.html#urf-client-new"/>
+    <keyword type="function" name="urf_client_error_quark ()" link="UrfClient.html#urf-client-error-quark"/>
+    <keyword type="function" name="urf_client_error_get_type ()" link="UrfClient.html#urf-client-error-get-type"/>
+    <keyword type="function" name="urf_client_get_devices ()" link="UrfClient.html#urf-client-get-devices" since="0.2.0"/>
+    <keyword type="function" name="urf_client_set_block ()" link="UrfClient.html#urf-client-set-block" since="0.2.0"/>
+    <keyword type="function" name="urf_client_set_block_idx ()" link="UrfClient.html#urf-client-set-block-idx" since="0.2.0"/>
+    <keyword type="function" name="urf_client_is_inhibited ()" link="UrfClient.html#urf-client-is-inhibited" since="0.2.0"/>
+    <keyword type="function" name="urf_client_inhibit ()" link="UrfClient.html#urf-client-inhibit" since="0.2.0"/>
+    <keyword type="function" name="urf_client_uninhibit ()" link="UrfClient.html#urf-client-uninhibit" since="0.2.0"/>
+    <keyword type="function" name="urf_client_set_wlan_block ()" link="UrfClient.html#urf-client-set-wlan-block" since="0.2.0"/>
+    <keyword type="function" name="urf_client_set_bluetooth_block ()" link="UrfClient.html#urf-client-set-bluetooth-block" since="0.2.0"/>
+    <keyword type="function" name="urf_client_set_wwan_block ()" link="UrfClient.html#urf-client-set-wwan-block" since="0.2.0"/>
+    <keyword type="function" name="urf_client_get_daemon_version ()" link="UrfClient.html#urf-client-get-daemon-version" since="0.2.0"/>
+    <keyword type="property" name="The &quot;daemon-version&quot; property" link="UrfClient.html#UrfClient--daemon-version"/>
+    <keyword type="property" name="The &quot;key-control&quot; property" link="UrfClient.html#UrfClient--key-control"/>
+    <keyword type="signal" name="The &quot;device-added&quot; signal" link="UrfClient.html#UrfClient-device-added"/>
+    <keyword type="signal" name="The &quot;device-changed&quot; signal" link="UrfClient.html#UrfClient-device-changed"/>
+    <keyword type="signal" name="The &quot;device-removed&quot; signal" link="UrfClient.html#UrfClient-device-removed"/>
+    <keyword type="signal" name="The &quot;rf-key-pressed&quot; signal" link="UrfClient.html#UrfClient-rf-key-pressed"/>
+    <keyword type="enum" name="enum UrfDeviceType" link="UrfDevice.html#UrfDeviceType"/>
+    <keyword type="struct" name="UrfDevice" link="UrfDevice.html#UrfDevice-struct"/>
+    <keyword type="struct" name="UrfDeviceClass" link="UrfDevice.html#UrfDeviceClass"/>
+    <keyword type="function" name="urf_device_new ()" link="UrfDevice.html#urf-device-new" since="0.2.0"/>
+    <keyword type="function" name="urf_device_set_object_path_sync ()" link="UrfDevice.html#urf-device-set-object-path-sync" since="0.2.0"/>
+    <keyword type="function" name="urf_device_get_object_path ()" link="UrfDevice.html#urf-device-get-object-path" since="0.2.0"/>
+    <keyword type="property" name="The &quot;hard&quot; property" link="UrfDevice.html#UrfDevice--hard"/>
+    <keyword type="property" name="The &quot;index&quot; property" link="UrfDevice.html#UrfDevice--index"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="UrfDevice.html#UrfDevice--name"/>
+    <keyword type="property" name="The &quot;soft&quot; property" link="UrfDevice.html#UrfDevice--soft"/>
+    <keyword type="property" name="The &quot;type&quot; property" link="UrfDevice.html#UrfDevice--type"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_ALL" link="UrfDevice.html#URFDEVICE-TYPE-ALL:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_WLAN" link="UrfDevice.html#URFDEVICE-TYPE-WLAN:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_BLUETOOTH" link="UrfDevice.html#URFDEVICE-TYPE-BLUETOOTH:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_UWB" link="UrfDevice.html#URFDEVICE-TYPE-UWB:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_WIMAX" link="UrfDevice.html#URFDEVICE-TYPE-WIMAX:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_WWAN" link="UrfDevice.html#URFDEVICE-TYPE-WWAN:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_GPS" link="UrfDevice.html#URFDEVICE-TYPE-GPS:CAPS"/>
+    <keyword type="constant" name="URFDEVICE_TYPE_FM" link="UrfDevice.html#URFDEVICE-TYPE-FM:CAPS"/>
+    <keyword type="constant" name="NUM_URFDEVICE_TYPES" link="UrfDevice.html#NUM-URFDEVICE-TYPES:CAPS"/>
+  </functions>
+</book>

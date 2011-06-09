@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="urfkill Reference Manual" link="index.html" author="Ching-Pang Lin" name="urfkill">
+  <chapters>
+    <sub name="D-Bus API Reference" link="ref-dbus.html">
+      <sub name="org.freedesktop.URfkill" link="URfkill.html"/>
+      <sub name="org.freedesktop.URfkill.Device" link="Device.html"/>
+    </sub>
+    <sub name="liburfkill-glib GObjects" link="liburfkill-glib.html">
+      <sub name="UrfClient" link="UrfClient.html"/>
+      <sub name="UrfDevice" link="UrfDevice.html"/>
+    </sub>
+    <sub name="Index" link="ix01.html"/>
+    <sub name="License" link="license.html"/>
+  </chapters>
+  <functions>
+    <function name="Block ()" link="URfkill.html#URfkill.Block"/>
+    <function name="BlockIdx ()" link="URfkill.html#URfkill.BlockIdx"/>
+    <function name="EnumerateDevices ()" link="URfkill.html#URfkill.EnumerateDevices"/>
+    <function name="IsInhibited ()" link="URfkill.html#URfkill.IsInhibited"/>
+    <function name="Inhibit ()" link="URfkill.html#URfkill.Inhibit"/>
+    <function name="Uninhibit ()" link="URfkill.html#URfkill.Uninhibit"/>
+    <function name="The DeviceAdded signal" link="URfkill.html#URfkill::DeviceAdded"/>
+    <function name="The DeviceRemoved signal" link="URfkill.html#URfkill::DeviceRemoved"/>
+    <function name="The DeviceChanged signal" link="URfkill.html#URfkill::DeviceChanged"/>
+    <function name="The UrfkeyPressed signal" link="URfkill.html#URfkill::UrfkeyPressed"/>
+    <function name="The &quot;DaemonVersion&quot; property" link="URfkill.html#URfkill:DaemonVersion"/>
+    <function name="The &quot;KeyControl&quot; property" link="URfkill.html#URfkill:KeyControl"/>
+    <function name="The Changed signal" link="Device.html#Device::Changed"/>
+    <function name="The &quot;index&quot; property" link="Device.html#Device:index"/>
+    <function name="The &quot;type&quot; property" link="Device.html#Device:type"/>
+    <function name="The &quot;name&quot; property" link="Device.html#Device:name"/>
+    <function name="The &quot;soft&quot; property" link="Device.html#Device:soft"/>
+    <function name="The &quot;hard&quot; property" link="Device.html#Device:hard"/>
+    <function name="URF_CLIENT_ERROR" link="UrfClient.html#URF-CLIENT-ERROR:CAPS"/>
+    <function name="URF_CLIENT_TYPE_ERROR" link="UrfClient.html#URF-CLIENT-TYPE-ERROR:CAPS"/>
+    <function name="UrfClient" link="UrfClient.html#UrfClient-struct"/>
+    <function name="UrfClientClass" link="UrfClient.html#UrfClientClass"/>
+    <function name="enum UrfClientError" link="UrfClient.html#UrfClientError"/>
+    <function name="urf_client_new ()" link="UrfClient.html#urf-client-new"/>
+    <function name="urf_client_error_quark ()" link="UrfClient.html#urf-client-error-quark"/>
+    <function name="urf_client_error_get_type ()" link="UrfClient.html#urf-client-error-get-type"/>
+    <function name="urf_client_get_devices ()" link="UrfClient.html#urf-client-get-devices"/>
+    <function name="urf_client_set_block ()" link="UrfClient.html#urf-client-set-block"/>
+    <function name="urf_client_set_block_idx ()" link="UrfClient.html#urf-client-set-block-idx"/>
+    <function name="urf_client_is_inhibited ()" link="UrfClient.html#urf-client-is-inhibited"/>
+    <function name="urf_client_inhibit ()" link="UrfClient.html#urf-client-inhibit"/>
+    <function name="urf_client_uninhibit ()" link="UrfClient.html#urf-client-uninhibit"/>
+    <function name="urf_client_set_wlan_block ()" link="UrfClient.html#urf-client-set-wlan-block"/>
+    <function name="urf_client_set_bluetooth_block ()" link="UrfClient.html#urf-client-set-bluetooth-block"/>
+    <function name="urf_client_set_wwan_block ()" link="UrfClient.html#urf-client-set-wwan-block"/>
+    <function name="urf_client_get_daemon_version ()" link="UrfClient.html#urf-client-get-daemon-version"/>
+    <function name="The &quot;daemon-version&quot; property" link="UrfClient.html#UrfClient--daemon-version"/>
+    <function name="The &quot;key-control&quot; property" link="UrfClient.html#UrfClient--key-control"/>
+    <function name="The &quot;device-added&quot; signal" link="UrfClient.html#UrfClient-device-added"/>
+    <function name="The &quot;device-changed&quot; signal" link="UrfClient.html#UrfClient-device-changed"/>
+    <function name="The &quot;device-removed&quot; signal" link="UrfClient.html#UrfClient-device-removed"/>
+    <function name="The &quot;rf-key-pressed&quot; signal" link="UrfClient.html#UrfClient-rf-key-pressed"/>
+    <function name="enum UrfDeviceType" link="UrfDevice.html#UrfDeviceType"/>
+    <function name="UrfDevice" link="UrfDevice.html#UrfDevice-struct"/>
+    <function name="UrfDeviceClass" link="UrfDevice.html#UrfDeviceClass"/>
+    <function name="urf_device_new ()" link="UrfDevice.html#urf-device-new"/>
+    <function name="urf_device_set_object_path_sync ()" link="UrfDevice.html#urf-device-set-object-path-sync"/>
+    <function name="urf_device_get_object_path ()" link="UrfDevice.html#urf-device-get-object-path"/>
+    <function name="The &quot;hard&quot; property" link="UrfDevice.html#UrfDevice--hard"/>
+    <function name="The &quot;index&quot; property" link="UrfDevice.html#UrfDevice--index"/>
+    <function name="The &quot;name&quot; property" link="UrfDevice.html#UrfDevice--name"/>
+    <function name="The &quot;soft&quot; property" link="UrfDevice.html#UrfDevice--soft"/>
+    <function name="The &quot;type&quot; property" link="UrfDevice.html#UrfDevice--type"/>
+  </functions>
+</book>

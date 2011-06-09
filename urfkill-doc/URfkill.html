@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.freedesktop.URfkill</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="urfkill Reference Manual">
+<link rel="up" href="ref-dbus.html" title="D-Bus API Reference">
+<link rel="prev" href="ref-dbus.html" title="D-Bus API Reference">
+<link rel="next" href="Device.html" title="org.freedesktop.URfkill.Device">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ref-dbus.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ref-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">urfkill Reference Manual</th>
+<td><a accesskey="n" href="Device.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#URfkill.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#URfkill.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#URfkill.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#URfkill.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#URfkill.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="org.freedesktop.URfkill">
+<a name="URfkill"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">org.freedesktop.URfkill</span></h2>
+<p>org.freedesktop.URfkill — URfkill interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis"><a class="link" href="URfkill.html#URfkill.Block">Block</a>            (in  'u'  type,
+                  in  'b'  block,
+                  out 'b'  ret)
+<a class="link" href="URfkill.html#URfkill.BlockIdx">BlockIdx</a>         (in  'u'  index,
+                  in  'b'  block,
+                  out 'b'  ret)
+<a class="link" href="URfkill.html#URfkill.EnumerateDevices">EnumerateDevices</a> (out 'ao' array)
+<a class="link" href="URfkill.html#URfkill.IsInhibited">IsInhibited</a>      (out 'b'  is_inhibited)
+<a class="link" href="URfkill.html#URfkill.Inhibit">Inhibit</a>          (in  's'  reason,
+                  out 'u'  inhibit_cookie)
+<a class="link" href="URfkill.html#URfkill.Uninhibit">Uninhibit</a>        (in  'u'  inhibit_cookie)
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="id2589205"></a><h2>Signals</h2>
+<pre class="synopsis"><a class="link" href="URfkill.html#URfkill::DeviceAdded">DeviceAdded</a>   ('o' device)
+<a class="link" href="URfkill.html#URfkill::DeviceRemoved">DeviceRemoved</a> ('o' device)
+<a class="link" href="URfkill.html#URfkill::DeviceChanged">DeviceChanged</a> ('o' device)
+<a class="link" href="URfkill.html#URfkill::UrfkeyPressed">UrfkeyPressed</a> ('i' keycode)
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="id2517812"></a><h2>Implemented Interfaces</h2>
+<p>
+    Objects implementing org.freedesktop.URfkill also implements
+    org.freedesktop.DBus.Introspectable,
+    org.freedesktop.DBus.Properties
+    </p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="id2517830"></a><h2>Properties</h2>
+<pre class="synopsis"><a class="link" href="URfkill.html#URfkill:DaemonVersion">'DaemonVersion'</a> read      's'
+<a class="link" href="URfkill.html#URfkill:KeyControl">'KeyControl'</a>    read      'b'
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="id2517859"></a><h2>Description</h2>
+<p>
+      
+        </p>
+<p>
+          The urfkill service is available via the system message
+          bus. To access the service, use
+          the <code class="literal">org.freedesktop.URfkill</code> interface on
+          the <code class="literal">/org/freedesktop/URfkill</code> object on
+          the D-Bus system bus service with the well-known
+          name <code class="literal">org.freedesktop.URfkill</code>.
+        </p>
+<p>
+        </p>
+<p>
+          </p>
+<div class="informalexample"><pre class="programlisting">
+$ dbus-send --print-reply \
+            --system \
+            --dest=org.freedesktop.URfkill \
+            /org/freedesktop/URfkill \
+            org.freedesktop.URfkill.EnumerateDevices
+
+method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
+   array [
+      object path "/org/freedesktop/URfkill/devices/0"
+      object path "/org/freedesktop/URfkill/devices/1"
+   ]
+            </pre></div>
+<p>
+        </p>
+<p>
+      
+    </p>
+</div>
+<div class="refsect1" title="Details">
+<a name="id2517919"></a><h2>Details</h2>
+<div class="refsect2" title="Block ()">
+<a name="id2517927"></a><h3>
+<a name="URfkill.Block"></a>Block ()</h3>
+<pre class="programlisting">Block (in  'u' type,
+       in  'b' block,
+       out 'b' ret)</pre>
+</div>
+<p>
+            Block or unblock the devices belonging to the type.
+            The types are defined as the followings:
+          </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">
+<span class="bold"><strong>0: </strong></span>All</li>
+<li class="listitem">
+<span class="bold"><strong>1: </strong></span>WLAN</li>
+<li class="listitem">
+<span class="bold"><strong>2: </strong></span>Bluetooth</li>
+<li class="listitem">
+<span class="bold"><strong>3: </strong></span>UWB</li>
+<li class="listitem">
+<span class="bold"><strong>4: </strong></span>WIMAX</li>
+<li class="listitem">
+<span class="bold"><strong>5: </strong></span>WWAN</li>
+<li class="listitem">
+<span class="bold"><strong>6: </strong></span>GPS</li>
+<li class="listitem">
+<span class="bold"><strong>7: </strong></span>FM</li>
+</ul></div>
+<p>
+	    Note: This method only changes soft block. Hard block is controlled
+	          by BIOS or the hardware and there is no way to change the
+		  state of hard block through kernel functions.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em>:</span></p></td>
+<td>
+	  The type of devices to be blocked/unblocked
+        </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>block</code></em>:</span></p></td>
+<td>
+	  TRUE to block the devices, FALSE to unblock
+        </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret</code></em>:</span></p></td>
+<td>
+	  TRUE for success, otherwise FALSE
+        </td>
+</tr>
+</tbody>
+</table></div>
+<div class="refsect3" title="Permissions">
+<a name="id2513679"></a><h4>Permissions</h4>
+<p class="permission">
+          This method is restricted to the active session user.
+        </p>
+</div>
+<hr>
+<div class="refsect2" title="BlockIdx ()">
+<a name="id2513688"></a><h3>
+<a name="URfkill.BlockIdx"></a>BlockIdx ()</h3>
+<pre class="programlisting">BlockIdx (in  'u' index,
+          in  'b' block,
+          out 'b' ret)</pre>
+</div>
+<p>
+            Block or unblock the device by the index.
+          </p>
+<p>
+	    Note: This method only changes soft block. Hard block is controlled
+	          by BIOS or the hardware and there is no way to change the
+		  state of hard block through kernel functions.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em>:</span></p></td>
+<td>
+	  The index of the device to be blocked/unblocked
+        </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>block</code></em>:</span></p></td>
+<td>
+	  TRUE to block the device, FALSE to unblock
+        </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret</code></em>:</span></p></td>
+<td>
+	  TRUE for success, otherwise FALSE
+        </td>
+</tr>
+</tbody>
+</table></div>
+<div class="refsect3" title="Permissions">
+<a name="id2553659"></a><h4>Permissions</h4>
+<p class="permission">
+          This method is restricted to the currently active session user.
+        </p>
+</div>
+<hr>
+<div class="refsect2" title="EnumerateDevices ()">
+<a name="id2553668"></a><h3>
+<a name="URfkill.EnumerateDevices"></a>EnumerateDevices ()</h3>
+<pre class="programlisting">EnumerateDevices (out 'ao' array)</pre>
+</div>
+<p>
+            Enumerate all rfkill objects on the system.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em>:</span></p></td>
+<td>
+	  An array of the object pathes for the devices
+        </td>
+</tr></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="IsInhibited ()">
+<a name="id2553712"></a><h3>
+<a name="URfkill.IsInhibited"></a>IsInhibited ()</h3>
+<pre class="programlisting">IsInhibited (out 'b' is_inhibited)</pre>
+</div>
+<p>
+            Get whether the rfkill key handling function is inhibited or not.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>is_inhibited</code></em>:</span></p></td>
+<td>
+	  TRUE if the key control is inhibited, otherwise FALSE
+        </td>
+</tr></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="Inhibit ()">
+<a name="id2553757"></a><h3>
+<a name="URfkill.Inhibit"></a>Inhibit ()</h3>
+<pre class="programlisting">Inhibit (in  's' reason,
+         out 'u' inhibit_cookie)</pre>
+</div>
+<p>
+            Inhibit the rfkill key handling function for the session.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reason</code></em>:</span></p></td>
+<td>
+	  The reason to inhibit the key control
+        </td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inhibit_cookie</code></em>:</span></p></td>
+<td>
+	  The cookie
+        </td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="Uninhibit ()">
+<a name="id2553814"></a><h3>
+<a name="URfkill.Uninhibit"></a>Uninhibit ()</h3>
+<pre class="programlisting">Uninhibit (in  'u' inhibit_cookie)</pre>
+</div>
+<p>
+            Cancel a previous call to <code class="function">Inhibit()</code>
+            identified by the cookie.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>inhibit_cookie</code></em>:</span></p></td>
+<td>
+	  The cookie
+        </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="id2514186"></a><h2>Signal Details</h2>
+<div class="refsect2" title="The DeviceAdded signal">
+<a name="id2514194"></a><h3>
+<a name="URfkill::DeviceAdded"></a>The DeviceAdded signal</h3>
+<pre class="programlisting">DeviceAdded ('o' device)</pre>
+</div>
+<p>
+            Emitted when a device is added.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>device</code></em>:</span></p></td>
+<td>
+	  The object path for the device that was added
+        </td>
+</tr></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="The DeviceRemoved signal">
+<a name="id2514237"></a><h3>
+<a name="URfkill::DeviceRemoved"></a>The DeviceRemoved signal</h3>
+<pre class="programlisting">DeviceRemoved ('o' device)</pre>
+</div>
+<p>
+            Emitted when a device is removed.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>device</code></em>:</span></p></td>
+<td>
+	  The object path for the device that was removed
+        </td>
+</tr></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="The DeviceChanged signal">
+<a name="id2514280"></a><h3>
+<a name="URfkill::DeviceChanged"></a>The DeviceChanged signal</h3>
+<pre class="programlisting">DeviceChanged ('o' device)</pre>
+</div>
+<p>
+            Emitted when a device is changed.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>device</code></em>:</span></p></td>
+<td>
+	  The object path for the device that was changed
+        </td>
+</tr></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title="The UrfkeyPressed signal">
+<a name="id2514323"></a><h3>
+<a name="URfkill::UrfkeyPressed"></a>The UrfkeyPressed signal</h3>
+<pre class="programlisting">UrfkeyPressed ('i' keycode)</pre>
+</div>
+<p>
+            Emitted when a rfkill key is pressed. The keycode is defined in
+            &lt;linux/input.h&gt;.
+          </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">
+<span class="bold"><strong>237: </strong></span>KEY_BLUETOOTH</li>
+<li class="listitem">
+<span class="bold"><strong>238: </strong></span>KEY_WLAN</li>
+<li class="listitem">
+<span class="bold"><strong>239: </strong></span>KEY_UWB</li>
+<li class="listitem">
+<span class="bold"><strong>246: </strong></span>KEY_WIMAX</li>
+<li class="listitem">
+<span class="bold"><strong>247: </strong></span>KEY_RFKILL</li>
+</ul></div>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>keycode</code></em>:</span></p></td>
+<td>
+	  The keycode emitted from the input device
+        </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="id2514408"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "DaemonVersion" property'>
+<a name="id2514416"></a><h3>
+<a name="URfkill:DaemonVersion"></a>The "DaemonVersion" property</h3>
+<pre class="programlisting">'DaemonVersion'  read      's'
+</pre>
+</div>
+<p>
+	    The version the running daemon. e.g. 0.2.0
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title='The "KeyControl" property'>
+<a name="id2579440"></a><h3>
+<a name="URfkill:KeyControl"></a>The "KeyControl" property</h3>
+<pre class="programlisting">'KeyControl'  read      'b'
+</pre>
+</div>
+<p>
+	    Whether the key control is enabled or not
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>
