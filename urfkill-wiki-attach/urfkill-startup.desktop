@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+X-SuSE-translate=true
+Name=Urfkilld startup
+Comment=Start the urfkilld daemon
+Exec=ping-urfkilld
+Icon=Urfkill
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
