@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UrfKillswitch</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="urfkill Reference Manual">
+<link rel="up" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
+<link rel="prev" href="UrfDevice.html" title="UrfDevice">
+<link rel="next" href="ix01.html" title="Index">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="UrfDevice.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="liburfkill-glib.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">urfkill Reference Manual</th>
+<td><a accesskey="n" href="ix01.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#UrfKillswitch.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#UrfKillswitch.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#UrfKillswitch.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#UrfKillswitch.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#UrfKillswitch.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="UrfKillswitch">
+<a name="UrfKillswitch"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="UrfKillswitch.top_of_page"></a>UrfKillswitch</span></h2>
+<p>UrfKillswitch — Client object for accessing information about killswitches</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="UrfKillswitch.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;urfkill.h&gt;
+
+                    <a class="link" href="UrfKillswitch.html#UrfKillswitch-struct" title="UrfKillswitch">UrfKillswitch</a>;
+                    <a class="link" href="UrfKillswitch.html#UrfKillswitchClass" title="UrfKillswitchClass">UrfKillswitchClass</a>;
+<a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="returnvalue">UrfKillswitch</span></a> *     <a class="link" href="UrfKillswitch.html#urf-killswitch-new" title="urf_killswitch_new ()">urf_killswitch_new</a>                  (<em class="parameter"><code><a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a> type</code></em>);
+<a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="returnvalue">UrfSwitchType</span></a>       <a class="link" href="UrfKillswitch.html#urf-killswitch-get-switch-type" title="urf_killswitch_get_switch_type ()">urf_killswitch_get_switch_type</a>      (<em class="parameter"><code><a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> *killswitch</code></em>);
+</pre>
+</div>
+<div class="refsect1" title="Object Hierarchy">
+<a name="UrfKillswitch.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----UrfKillswitch
+</pre>
+</div>
+<div class="refsect1" title="Properties">
+<a name="UrfKillswitch.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="UrfKillswitch.html#UrfKillswitch--state" title='The "state" property'>state</a>"                    <a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+</pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="UrfKillswitch.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="UrfKillswitch.html#UrfKillswitch-state-changed" title='The "state-changed" signal'>state-changed</a>"                                  : Run Last
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="UrfKillswitch.description"></a><h2>Description</h2>
+<p>
+A helper GObject for accessing killswitches
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="UrfKillswitch.details"></a><h2>Details</h2>
+<div class="refsect2" title="UrfKillswitch">
+<a name="UrfKillswitch-struct"></a><h3>UrfKillswitch</h3>
+<pre class="programlisting">typedef struct _UrfKillswitch UrfKillswitch;</pre>
+<p>
+The UrfKillswitch struct contains only private fields
+and should not be directly accessed.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="UrfKillswitchClass">
+<a name="UrfKillswitchClass"></a><h3>UrfKillswitchClass</h3>
+<pre class="programlisting">typedef struct {
+} UrfKillswitchClass;
+</pre>
+<p>
+Class structure for <a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="urf_killswitch_new ()">
+<a name="urf-killswitch-new"></a><h3>urf_killswitch_new ()</h3>
+<pre class="programlisting"><a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="returnvalue">UrfKillswitch</span></a> *     urf_killswitch_new                  (<em class="parameter"><code><a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a> type</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>The killswitch type
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a new <a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> object.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.3.0</p>
+</div>
+<hr>
+<div class="refsect2" title="urf_killswitch_get_switch_type ()">
+<a name="urf-killswitch-get-switch-type"></a><h3>urf_killswitch_get_switch_type ()</h3>
+<pre class="programlisting"><a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="returnvalue">UrfSwitchType</span></a>       urf_killswitch_get_switch_type      (<em class="parameter"><code><a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> *killswitch</code></em>);</pre>
+<p>
+Get the type of the killswitch.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>killswitch</code></em> :</span></p></td>
+<td>a <a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> instance
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The type of the killswitch
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.3.0</p>
+</div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="UrfKillswitch.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "state" property'>
+<a name="UrfKillswitch--state"></a><h3>The <code class="literal">"state"</code> property</h3>
+<pre class="programlisting">  "state"                    <a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>
+The state of the killswitch. See <a class="link" href="urfkill-UrfEnum.html#UrfSwitchState" title="enum UrfSwitchState"><span class="type">UrfSwitchState</span></a>.
+</p>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+    Writing the states other than <a class="link" href="urfkill-UrfEnum.html#URFSWITCH-STATE-UNBLOCKED:CAPS"><span class="type">URFSWITCH_STATE_UNBLOCKED</span></a>
+    or <a class="link" href="urfkill-UrfEnum.html#URFSWITCH-STATE-SOFT-BLOCKED:CAPS"><span class="type">URFSWITCH_STATE_SOFT_BLOCKED</span></a> will be ignored. Also,
+    the state writing may not take effect, and it depends on
+    the state of the hardware.
+  </p>
+</div>
+<p>
+</p>
+<p>Allowed values: [-1,2]</p>
+<p>Default value: -1</p>
+<p class="since">Since 0.3.0</p>
+</div>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="UrfKillswitch.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" title='The "state-changed" signal'>
+<a name="UrfKillswitch-state-changed"></a><h3>The <code class="literal">"state-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> *client,
+                                                        <a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>           state,
+                                                        <a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)      : Run Last</pre>
+<p>
+The state-changed signal is emitted when the killswitch state is changed.
+See <a class="link" href="urfkill-UrfEnum.html#UrfSwitchState" title="enum UrfSwitchState"><span class="type">UrfSwitchState</span></a>.
+</p>
+<p>
+Since 0.3.0
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
+<td>the <a class="link" href="UrfKillswitch.html" title="UrfKillswitch"><span class="type">UrfKillswitch</span></a> instance that emitted the signal
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>state</code></em> :</span></p></td>
+<td>the new state
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="UrfKillswitch.see-also"></a><h2>See Also</h2>
+<a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a>, <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

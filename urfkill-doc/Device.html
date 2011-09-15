@@ -7,7 +7,7 @@
 <link rel="home" href="index.html" title="urfkill Reference Manual">
 <link rel="up" href="ref-dbus.html" title="D-Bus API Reference">
 <link rel="prev" href="URfkill.html" title="org.freedesktop.URfkill">
-<link rel="next" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
+<link rel="next" href="Killswitch.html" title="org.freedesktop.URfkill.Killswitch">
 <meta name="generator" content="GTK-Doc V1.15 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -18,7 +18,7 @@
 <td><a accesskey="u" href="ref-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">urfkill Reference Manual</th>
-<td><a accesskey="n" href="liburfkill-glib.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="Killswitch.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#Device.synopsis" class="shortcut">Top</a>
@@ -46,12 +46,12 @@
 <pre class="synopsis"></pre>
 </div>
 <div class="refsect1" title="Signals">
-<a name="id2585810"></a><h2>Signals</h2>
+<a name="id2569169"></a><h2>Signals</h2>
 <pre class="synopsis"><a class="link" href="Device.html#Device::Changed">Changed</a> ()
 </pre>
 </div>
 <div class="refsect1" title="Implemented Interfaces">
-<a name="id2597980"></a><h2>Implemented Interfaces</h2>
+<a name="id2594465"></a><h2>Implemented Interfaces</h2>
 <p>
     Objects implementing org.freedesktop.URfkill.Device also implements
     org.freedesktop.DBus.Introspectable,
@@ -59,16 +59,17 @@
     </p>
 </div>
 <div class="refsect1" title="Properties">
-<a name="id2598241"></a><h2>Properties</h2>
-<pre class="synopsis"><a class="link" href="Device.html#Device:index">'index'</a> read      'u'
-<a class="link" href="Device.html#Device:type">'type'</a>  read      'u'
-<a class="link" href="Device.html#Device:name">'name'</a>  read      's'
-<a class="link" href="Device.html#Device:soft">'soft'</a>  read      'b'
-<a class="link" href="Device.html#Device:hard">'hard'</a>  read      'b'
+<a name="id2598085"></a><h2>Properties</h2>
+<pre class="synopsis"><a class="link" href="Device.html#Device:index">'index'</a>    read      'u'
+<a class="link" href="Device.html#Device:type">'type'</a>     read      'u'
+<a class="link" href="Device.html#Device:name">'name'</a>     read      's'
+<a class="link" href="Device.html#Device:soft">'soft'</a>     read      'b'
+<a class="link" href="Device.html#Device:hard">'hard'</a>     read      'b'
+<a class="link" href="Device.html#Device:platform">'platform'</a> read      'b'
 </pre>
 </div>
 <div class="refsect1" title="Description">
-<a name="id2593869"></a><h2>Description</h2>
+<a name="id2586486"></a><h2>Description</h2>
 <p>
       
         </p>
@@ -125,12 +126,12 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
     </p>
 </div>
 <div class="refsect1" title="Details">
-<a name="id2588382"></a><h2>Details</h2>
+<a name="id2600720"></a><h2>Details</h2>
 </div>
 <div class="refsect1" title="Signal Details">
-<a name="id2588394"></a><h2>Signal Details</h2>
+<a name="id2600732"></a><h2>Signal Details</h2>
 <div class="refsect2" title="The Changed signal">
-<a name="id2588402"></a><h3>
+<a name="id2600740"></a><h3>
 <a name="Device::Changed"></a>The Changed signal</h3>
 <pre class="programlisting">Changed ()</pre>
 </div>
@@ -143,9 +144,9 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </table></div>
 </div>
 <div class="refsect1" title="Property Details">
-<a name="id2588436"></a><h2>Property Details</h2>
+<a name="id2573297"></a><h2>Property Details</h2>
 <div class="refsect2" title='The "index" property'>
-<a name="id2588444"></a><h3>
+<a name="id2573305"></a><h3>
 <a name="Device:index"></a>The "index" property</h3>
 <pre class="programlisting">'index'  read      'u'
 </pre>
@@ -159,7 +160,7 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title='The "type" property'>
-<a name="id2588475"></a><h3>
+<a name="id2573336"></a><h3>
 <a name="Device:type"></a>The "type" property</h3>
 <pre class="programlisting">'type'  read      'u'
 </pre>
@@ -191,7 +192,7 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title='The "name" property'>
-<a name="id2603127"></a><h3>
+<a name="id2573427"></a><h3>
 <a name="Device:name"></a>The "name" property</h3>
 <pre class="programlisting">'name'  read      's'
 </pre>
@@ -205,7 +206,7 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title='The "soft" property'>
-<a name="id2603159"></a><h3>
+<a name="id2603094"></a><h3>
 <a name="Device:soft"></a>The "soft" property</h3>
 <pre class="programlisting">'soft'  read      'b'
 </pre>
@@ -219,13 +220,27 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title='The "hard" property'>
-<a name="id2596191"></a><h3>
+<a name="id2603125"></a><h3>
 <a name="Device:hard"></a>The "hard" property</h3>
 <pre class="programlisting">'hard'  read      'b'
 </pre>
 </div>
 <p>
 	    Whether the hard block of the device is on or not
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+<hr>
+<div class="refsect2" title='The "platform" property'>
+<a name="id2603157"></a><h3>
+<a name="Device:platform"></a>The "platform" property</h3>
+<pre class="programlisting">'platform'  read      'b'
+</pre>
+</div>
+<p>
+	    Whether the device is generated by a platform driver or not
           </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">

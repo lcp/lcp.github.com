@@ -7,7 +7,7 @@
 <link rel="home" href="index.html" title="urfkill Reference Manual">
 <link rel="up" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
 <link rel="prev" href="UrfClient.html" title="UrfClient">
-<link rel="next" href="ix01.html" title="Index">
+<link rel="next" href="UrfKillswitch.html" title="UrfKillswitch">
 <meta name="generator" content="GTK-Doc V1.15 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -18,7 +18,7 @@
 <td><a accesskey="u" href="liburfkill-glib.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">urfkill Reference Manual</th>
-<td><a accesskey="n" href="ix01.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="UrfKillswitch.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#UrfDevice.synopsis" class="shortcut">Top</a>
@@ -44,7 +44,6 @@
 <pre class="synopsis">
 #include &lt;urfkill.h&gt;
 
-enum                <a class="link" href="UrfDevice.html#UrfDeviceType" title="enum UrfDeviceType">UrfDeviceType</a>;
                     <a class="link" href="UrfDevice.html#UrfDevice-struct" title="UrfDevice">UrfDevice</a>;
                     <a class="link" href="UrfDevice.html#UrfDeviceClass" title="UrfDeviceClass">UrfDeviceClass</a>;
 <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="returnvalue">UrfDevice</span></a> *         <a class="link" href="UrfDevice.html#urf-device-new" title="urf_device_new ()">urf_device_new</a>                      (<em class="parameter"><code><span class="type">void</span></code></em>);
@@ -68,7 +67,8 @@ const <span class="returnvalue">char</span> *        <a class="link" href="UrfDe
   "<a class="link" href="UrfDevice.html#UrfDevice--hard" title='The "hard" property'>hard</a>"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
   "<a class="link" href="UrfDevice.html#UrfDevice--index" title='The "index" property'>index</a>"                    <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
   "<a class="link" href="UrfDevice.html#UrfDevice--name" title='The "name" property'>name</a>"                     <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
-  "<a class="link" href="UrfDevice.html#UrfDevice--soft" title='The "soft" property'>soft</a>"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="UrfDevice.html#UrfDevice--platform" title='The "platform" property'>platform</a>"                 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="UrfDevice.html#UrfDevice--soft" title='The "soft" property'>soft</a>"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
   "<a class="link" href="UrfDevice.html#UrfDevice--type" title='The "type" property'>type</a>"                     <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
 </pre>
 </div>
@@ -80,75 +80,6 @@ A helper GObject for accessing rfkill devices
 </div>
 <div class="refsect1" title="Details">
 <a name="UrfDevice.details"></a><h2>Details</h2>
-<div class="refsect2" title="enum UrfDeviceType">
-<a name="UrfDeviceType"></a><h3>enum UrfDeviceType</h3>
-<pre class="programlisting">typedef enum {
-        URFDEVICE_TYPE_ALL = 0,
-        URFDEVICE_TYPE_WLAN,
-        URFDEVICE_TYPE_BLUETOOTH,
-        URFDEVICE_TYPE_UWB,
-        URFDEVICE_TYPE_WIMAX,
-        URFDEVICE_TYPE_WWAN,
-        URFDEVICE_TYPE_GPS,
-        URFDEVICE_TYPE_FM,
-        NUM_URFDEVICE_TYPES,
-} UrfDeviceType;
-</pre>
-<p>
-The type of the rfkill device following the definition in &lt;linux/rfkill.h&gt;
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-ALL:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_ALL</code></span></p></td>
-<td>toggles all switches (requests only - not a switch type)
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-WLAN:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_WLAN</code></span></p></td>
-<td>switch is on a 802.11 wireless network device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-BLUETOOTH:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_BLUETOOTH</code></span></p></td>
-<td>switch is on a bluetooth device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-UWB:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_UWB</code></span></p></td>
-<td>switch is on a ultra wideband device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-WIMAX:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_WIMAX</code></span></p></td>
-<td>switch is on a WiMAX device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-WWAN:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_WWAN</code></span></p></td>
-<td>switch is on a wireless WAN device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-GPS:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_GPS</code></span></p></td>
-<td>switch is on a GPS device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFDEVICE-TYPE-FM:CAPS"></a><span class="term"><code class="literal">URFDEVICE_TYPE_FM</code></span></p></td>
-<td>switch is on a FM radio device.
-</td>
-</tr>
-<tr>
-<td><p><a name="NUM-URFDEVICE-TYPES:CAPS"></a><span class="term"><code class="literal">NUM_URFDEVICE_TYPES</code></span></p></td>
-<td>number of defined rfkill types
-</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
 <div class="refsect2" title="UrfDevice">
 <a name="UrfDevice-struct"></a><h3>UrfDevice</h3>
 <pre class="programlisting">typedef struct _UrfDevice UrfDevice;</pre>
@@ -287,22 +218,33 @@ The name of the rfkill device defined by the driver
 <p class="since">Since 0.2.0</p>
 </div>
 <hr>
+<div class="refsect2" title='The "platform" property'>
+<a name="UrfDevice--platform"></a><h3>The <code class="literal">"platform"</code> property</h3>
+<pre class="programlisting">  "platform"                 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<p>
+This property indicates whether the rfkill device is generated by
+a platform driver or not.
+</p>
+<p>Default value: FALSE</p>
+<p class="since">Since 0.3.0</p>
+</div>
+<hr>
 <div class="refsect2" title='The "soft" property'>
 <a name="UrfDevice--soft"></a><h3>The <code class="literal">"soft"</code> property</h3>
-<pre class="programlisting">  "soft"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<pre class="programlisting">  "soft"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
 This property indicates whether the soft block of the rfkill device
 is on or not.
 </p>
 <p>Default value: FALSE</p>
-<p class="since">Since 0.2.0</p>
+<p class="since">Since 0.3.0</p>
 </div>
 <hr>
 <div class="refsect2" title='The "type" property'>
 <a name="UrfDevice--type"></a><h3>The <code class="literal">"type"</code> property</h3>
 <pre class="programlisting">  "type"                     <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
 <p>
-The type of the rfkill device. See <a class="link" href="UrfDevice.html#UrfDeviceType" title="enum UrfDeviceType"><span class="type">UrfDeviceType</span></a>.
+The type of the rfkill device. See <a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a>.
 </p>
 <p>Allowed values: &lt;= 7</p>
 <p>Default value: 0</p>

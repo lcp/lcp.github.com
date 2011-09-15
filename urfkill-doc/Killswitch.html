@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>org.freedesktop.URfkill.Killswitch</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="urfkill Reference Manual">
+<link rel="up" href="ref-dbus.html" title="D-Bus API Reference">
+<link rel="prev" href="Device.html" title="org.freedesktop.URfkill.Device">
+<link rel="next" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
+<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="Device.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ref-dbus.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">urfkill Reference Manual</th>
+<td><a accesskey="n" href="liburfkill-glib.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#Killswitch.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#Killswitch.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#Killswitch.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#Killswitch.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#Killswitch.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" title="org.freedesktop.URfkill.Killswitch">
+<a name="Killswitch"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">org.freedesktop.URfkill.Killswitch</span></h2>
+<p>org.freedesktop.URfkill.Killswitch — Killswitch interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Methods">
+<h2>Methods</h2>
+<pre class="synopsis"></pre>
+</div>
+<div class="refsect1" title="Signals">
+<a name="id2599031"></a><h2>Signals</h2>
+<pre class="synopsis"><a class="link" href="Killswitch.html#Killswitch::StateChanged">StateChanged</a> ()
+</pre>
+</div>
+<div class="refsect1" title="Implemented Interfaces">
+<a name="id2568754"></a><h2>Implemented Interfaces</h2>
+<p>
+    Objects implementing org.freedesktop.URfkill.Killswitch also implements
+    org.freedesktop.DBus.Introspectable,
+    org.freedesktop.DBus.Properties
+    </p>
+</div>
+<div class="refsect1" title="Properties">
+<a name="id2602246"></a><h2>Properties</h2>
+<pre class="synopsis"><a class="link" href="Killswitch.html#Killswitch:state">'state'</a> read      'i'
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="id2573836"></a><h2>Description</h2>
+<p>
+      
+        </p>
+<p>
+          Objects implementing this interface represent different types
+          of killswitches and are discovered through the
+          <code class="literal">org.freedesktop.URfkill.Killswitch</code> interface
+          on the <code class="literal">/org/freedesktop/URfkill/TYPENAME</code>
+          object on the D-Bus system bus service with the well-known
+          name <code class="literal">org.freedesktop.URfkill</code>. The TYPENAME
+          could be <code class="literal">"WLAN"</code>, <code class="literal">"BLUETOOTH"</code>,
+          <code class="literal">"UWB"</code>, <code class="literal">"WIMAX"</code>,
+          <code class="literal">"WWAN"</code>, <code class="literal">"GPS"</code>, or
+          <code class="literal">"FM"</code>.
+        </p>
+<p>
+        </p>
+<p>
+          </p>
+<div class="informalexample"><pre class="programlisting">
+$ dbus-send --print-reply \
+            --system \
+            --dest=org.freedesktop.URfkill \
+            /org/freedesktop/URfkill/WLAN \
+            org.freedesktop.DBus.Properties.GetAll \
+            string:"org.freedesktop.URfkill.Killswitch"
+
+method return sender=:1.144 -&gt; dest=:1.154 reply_serial=2
+   array [
+      dict entry(
+         string "state"
+         variant             int32 2
+      )
+   ]
+            </pre></div>
+<p>
+        </p>
+<p>
+      
+    </p>
+</div>
+<div class="refsect1" title="Details">
+<a name="id2596067"></a><h2>Details</h2>
+</div>
+<div class="refsect1" title="Signal Details">
+<a name="id2582984"></a><h2>Signal Details</h2>
+<div class="refsect2" title="The StateChanged signal">
+<a name="id2582992"></a><h3>
+<a name="Killswitch::StateChanged"></a>The StateChanged signal</h3>
+<pre class="programlisting">StateChanged ()</pre>
+</div>
+<p>
+            Emitted when the state of the killswitch changed.
+          </p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+</div>
+<div class="refsect1" title="Property Details">
+<a name="id2583024"></a><h2>Property Details</h2>
+<div class="refsect2" title='The "state" property'>
+<a name="id2583032"></a><h3>
+<a name="Killswitch:state"></a>The "state" property</h3>
+<pre class="programlisting">'state'  read      'i'
+</pre>
+</div>
+<p>
+	    The state of the killswitch
+          </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">
+<span class="bold"><strong>-1: </strong></span>killswitch is not available.</li>
+<li class="listitem">
+<span class="bold"><strong>0: </strong></span>killswitch is unblocked.</li>
+<li class="listitem">
+<span class="bold"><strong>1: </strong></span>killswitch is soft-blocked.</li>
+<li class="listitem">
+<span class="bold"><strong>2: </strong></span>killswitch is hard-blocked.</li>
+</ul></div>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.15</div>
+</body>
+</html>

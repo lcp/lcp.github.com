@@ -57,7 +57,7 @@
 </pre>
 </div>
 <div class="refsect1" title="Signals">
-<a name="id2589205"></a><h2>Signals</h2>
+<a name="id2513071"></a><h2>Signals</h2>
 <pre class="synopsis"><a class="link" href="URfkill.html#URfkill::DeviceAdded">DeviceAdded</a>   ('o' device)
 <a class="link" href="URfkill.html#URfkill::DeviceRemoved">DeviceRemoved</a> ('o' device)
 <a class="link" href="URfkill.html#URfkill::DeviceChanged">DeviceChanged</a> ('o' device)
@@ -65,7 +65,7 @@
 </pre>
 </div>
 <div class="refsect1" title="Implemented Interfaces">
-<a name="id2517812"></a><h2>Implemented Interfaces</h2>
+<a name="id2517826"></a><h2>Implemented Interfaces</h2>
 <p>
     Objects implementing org.freedesktop.URfkill also implements
     org.freedesktop.DBus.Introspectable,
@@ -73,13 +73,13 @@
     </p>
 </div>
 <div class="refsect1" title="Properties">
-<a name="id2517830"></a><h2>Properties</h2>
+<a name="id2517844"></a><h2>Properties</h2>
 <pre class="synopsis"><a class="link" href="URfkill.html#URfkill:DaemonVersion">'DaemonVersion'</a> read      's'
 <a class="link" href="URfkill.html#URfkill:KeyControl">'KeyControl'</a>    read      'b'
 </pre>
 </div>
 <div class="refsect1" title="Description">
-<a name="id2517859"></a><h2>Description</h2>
+<a name="id2517873"></a><h2>Description</h2>
 <p>
       
         </p>
@@ -115,9 +115,9 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
     </p>
 </div>
 <div class="refsect1" title="Details">
-<a name="id2517919"></a><h2>Details</h2>
+<a name="id2517933"></a><h2>Details</h2>
 <div class="refsect2" title="Block ()">
-<a name="id2517927"></a><h3>
+<a name="id2517941"></a><h3>
 <a name="URfkill.Block"></a>Block ()</h3>
 <pre class="programlisting">Block (in  'u' type,
        in  'b' block,
@@ -174,14 +174,14 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </tbody>
 </table></div>
 <div class="refsect3" title="Permissions">
-<a name="id2513679"></a><h4>Permissions</h4>
+<a name="id2513692"></a><h4>Permissions</h4>
 <p class="permission">
           This method is restricted to the active session user.
         </p>
 </div>
 <hr>
 <div class="refsect2" title="BlockIdx ()">
-<a name="id2513688"></a><h3>
+<a name="id2513701"></a><h3>
 <a name="URfkill.BlockIdx"></a>BlockIdx ()</h3>
 <pre class="programlisting">BlockIdx (in  'u' index,
           in  'b' block,
@@ -219,14 +219,14 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </tbody>
 </table></div>
 <div class="refsect3" title="Permissions">
-<a name="id2553659"></a><h4>Permissions</h4>
+<a name="id2553667"></a><h4>Permissions</h4>
 <p class="permission">
           This method is restricted to the currently active session user.
         </p>
 </div>
 <hr>
 <div class="refsect2" title="EnumerateDevices ()">
-<a name="id2553668"></a><h3>
+<a name="id2553676"></a><h3>
 <a name="URfkill.EnumerateDevices"></a>EnumerateDevices ()</h3>
 <pre class="programlisting">EnumerateDevices (out 'ao' array)</pre>
 </div>
@@ -244,7 +244,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="IsInhibited ()">
-<a name="id2553712"></a><h3>
+<a name="id2553720"></a><h3>
 <a name="URfkill.IsInhibited"></a>IsInhibited ()</h3>
 <pre class="programlisting">IsInhibited (out 'b' is_inhibited)</pre>
 </div>
@@ -262,7 +262,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="Inhibit ()">
-<a name="id2553757"></a><h3>
+<a name="id2553764"></a><h3>
 <a name="URfkill.Inhibit"></a>Inhibit ()</h3>
 <pre class="programlisting">Inhibit (in  's' reason,
          out 'u' inhibit_cookie)</pre>
@@ -289,7 +289,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="Uninhibit ()">
-<a name="id2553814"></a><h3>
+<a name="id2553821"></a><h3>
 <a name="URfkill.Uninhibit"></a>Uninhibit ()</h3>
 <pre class="programlisting">Uninhibit (in  'u' inhibit_cookie)</pre>
 </div>
@@ -308,9 +308,9 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 </div>
 <div class="refsect1" title="Signal Details">
-<a name="id2514186"></a><h2>Signal Details</h2>
+<a name="id2514196"></a><h2>Signal Details</h2>
 <div class="refsect2" title="The DeviceAdded signal">
-<a name="id2514194"></a><h3>
+<a name="id2514204"></a><h3>
 <a name="URfkill::DeviceAdded"></a>The DeviceAdded signal</h3>
 <pre class="programlisting">DeviceAdded ('o' device)</pre>
 </div>
@@ -328,7 +328,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="The DeviceRemoved signal">
-<a name="id2514237"></a><h3>
+<a name="id2514247"></a><h3>
 <a name="URfkill::DeviceRemoved"></a>The DeviceRemoved signal</h3>
 <pre class="programlisting">DeviceRemoved ('o' device)</pre>
 </div>
@@ -346,7 +346,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="The DeviceChanged signal">
-<a name="id2514280"></a><h3>
+<a name="id2514290"></a><h3>
 <a name="URfkill::DeviceChanged"></a>The DeviceChanged signal</h3>
 <pre class="programlisting">DeviceChanged ('o' device)</pre>
 </div>
@@ -364,7 +364,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title="The UrfkeyPressed signal">
-<a name="id2514323"></a><h3>
+<a name="id2514333"></a><h3>
 <a name="URfkill::UrfkeyPressed"></a>The UrfkeyPressed signal</h3>
 <pre class="programlisting">UrfkeyPressed ('i' keycode)</pre>
 </div>
@@ -395,9 +395,9 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 </div>
 <div class="refsect1" title="Property Details">
-<a name="id2514408"></a><h2>Property Details</h2>
+<a name="id2514417"></a><h2>Property Details</h2>
 <div class="refsect2" title='The "DaemonVersion" property'>
-<a name="id2514416"></a><h3>
+<a name="id2514425"></a><h3>
 <a name="URfkill:DaemonVersion"></a>The "DaemonVersion" property</h3>
 <pre class="programlisting">'DaemonVersion'  read      's'
 </pre>
@@ -411,7 +411,7 @@ method return sender=:1.164 -&gt; dest=:1.167 reply_serial=2
 </table></div>
 <hr>
 <div class="refsect2" title='The "KeyControl" property'>
-<a name="id2579440"></a><h3>
+<a name="id2579463"></a><h3>
 <a name="URfkill:KeyControl"></a>The "KeyControl" property</h3>
 <pre class="programlisting">'KeyControl'  read      'b'
 </pre>

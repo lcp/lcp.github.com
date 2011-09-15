@@ -6,7 +6,7 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
 <link rel="home" href="index.html" title="urfkill Reference Manual">
 <link rel="up" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
-<link rel="prev" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
+<link rel="prev" href="urfkill-UrfEnum.html" title="UrfEnum">
 <link rel="next" href="UrfDevice.html" title="UrfDevice">
 <meta name="generator" content="GTK-Doc V1.15 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
@@ -14,7 +14,7 @@
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
 <tr valign="middle">
-<td><a accesskey="p" href="liburfkill-glib.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="urfkill-UrfEnum.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
 <td><a accesskey="u" href="liburfkill-glib.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">urfkill Reference Manual</th>
@@ -54,9 +54,12 @@ enum                <a class="link" href="UrfClient.html#UrfClientError" title="
 <a class="link" href="UrfClient.html" title="UrfClient"><span class="returnvalue">UrfClient</span></a> *         <a class="link" href="UrfClient.html#urf-client-new" title="urf_client_new ()">urf_client_new</a>                      (<em class="parameter"><code><span class="type">void</span></code></em>);
 <a href="../glib/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="UrfClient.html#urf-client-error-quark" title="urf_client_error_quark ()">urf_client_error_quark</a>              (<em class="parameter"><code><span class="type">void</span></code></em>);
 <a href="../gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               <a class="link" href="UrfClient.html#urf-client-error-get-type" title="urf_client_error_get_type ()">urf_client_error_get_type</a>           (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="UrfClient.html#urf-client-enumerate-devices-sync" title="urf_client_enumerate_devices_sync ()">urf_client_enumerate_devices_sync</a>   (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>,
+                                                         <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
 <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="UrfClient.html#urf-client-get-devices" title="urf_client_get_devices ()">urf_client_get_devices</a>              (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>);
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="UrfClient.html#urf-client-set-block" title="urf_client_set_block ()">urf_client_set_block</a>                (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>,
-                                                         <em class="parameter"><code><a class="link" href="UrfDevice.html#UrfDeviceType" title="enum UrfDeviceType"><span class="type">UrfDeviceType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a> type</code></em>,
                                                          <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> block</code></em>,
                                                          <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
@@ -181,11 +184,57 @@ Creates a new <a class="link" href="UrfClient.html" title="UrfClient"><span clas
 <pre class="programlisting"><a href="../gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               urf_client_error_get_type           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 </div>
 <hr>
+<div class="refsect2" title="urf_client_enumerate_devices_sync ()">
+<a name="urf-client-enumerate-devices-sync"></a><h3>urf_client_enumerate_devices_sync ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            urf_client_enumerate_devices_sync   (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>,
+                                                         <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Enumerate the devices from the daemon.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
+<td>a <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
+<td>a <a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> for success, else <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><span class="type">FALSE</span></a> and <em class="parameter"><code>error</code></em> is used
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.3.0</p>
+</div>
+<hr>
 <div class="refsect2" title="urf_client_get_devices ()">
 <a name="urf-client-get-devices"></a><h3>urf_client_get_devices ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             urf_client_get_devices              (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>);</pre>
 <p>
 Get a list of the device objects.
+</p>
+<div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+    You must have called <a class="link" href="UrfClient.html#urf-client-enumerate-devices-sync" title="urf_client_enumerate_devices_sync ()"><span class="type">urf_client_enumerate_devices_sync</span></a> before
+    calling this function.
+  </p>
+</div>
+<p>
 </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">
@@ -208,7 +257,7 @@ Get a list of the device objects.
 <div class="refsect2" title="urf_client_set_block ()">
 <a name="urf-client-set-block"></a><h3>urf_client_set_block ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            urf_client_set_block                (<em class="parameter"><code><a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> *client</code></em>,
-                                                         <em class="parameter"><code><a class="link" href="UrfDevice.html#UrfDeviceType" title="enum UrfDeviceType"><span class="type">UrfDeviceType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a> type</code></em>,
                                                          <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> block</code></em>,
                                                          <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
@@ -586,7 +635,7 @@ Since 0.2.0
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
-<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signa
+<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signal
 </td>
 </tr>
 <tr>
@@ -618,7 +667,7 @@ Since 0.2.0
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
-<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signa
+<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signal
 </td>
 </tr>
 <tr>
@@ -650,7 +699,7 @@ Since 0.2.0
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
-<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signa
+<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signal
 </td>
 </tr>
 <tr>
@@ -682,7 +731,7 @@ Since 0.2.0
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>client</code></em> :</span></p></td>
-<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signa
+<td>the <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a> instance that emitted the signal
 </td>
 </tr>
 <tr>

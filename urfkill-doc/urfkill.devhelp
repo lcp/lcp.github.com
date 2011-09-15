@@ -5,10 +5,13 @@
     <sub name="D-Bus API Reference" link="ref-dbus.html">
       <sub name="org.freedesktop.URfkill" link="URfkill.html"/>
       <sub name="org.freedesktop.URfkill.Device" link="Device.html"/>
+      <sub name="org.freedesktop.URfkill.Killswitch" link="Killswitch.html"/>
     </sub>
     <sub name="liburfkill-glib GObjects" link="liburfkill-glib.html">
+      <sub name="UrfEnum" link="urfkill-UrfEnum.html"/>
       <sub name="UrfClient" link="UrfClient.html"/>
       <sub name="UrfDevice" link="UrfDevice.html"/>
+      <sub name="UrfKillswitch" link="UrfKillswitch.html"/>
     </sub>
     <sub name="Index" link="ix01.html"/>
     <sub name="License" link="license.html"/>
@@ -32,6 +35,11 @@
     <function name="The &quot;name&quot; property" link="Device.html#Device:name"/>
     <function name="The &quot;soft&quot; property" link="Device.html#Device:soft"/>
     <function name="The &quot;hard&quot; property" link="Device.html#Device:hard"/>
+    <function name="The &quot;platform&quot; property" link="Device.html#Device:platform"/>
+    <function name="The StateChanged signal" link="Killswitch.html#Killswitch::StateChanged"/>
+    <function name="The &quot;state&quot; property" link="Killswitch.html#Killswitch:state"/>
+    <function name="enum UrfSwitchType" link="urfkill-UrfEnum.html#UrfSwitchType"/>
+    <function name="enum UrfSwitchState" link="urfkill-UrfEnum.html#UrfSwitchState"/>
     <function name="URF_CLIENT_ERROR" link="UrfClient.html#URF-CLIENT-ERROR:CAPS"/>
     <function name="URF_CLIENT_TYPE_ERROR" link="UrfClient.html#URF-CLIENT-TYPE-ERROR:CAPS"/>
     <function name="UrfClient" link="UrfClient.html#UrfClient-struct"/>
@@ -40,6 +48,7 @@
     <function name="urf_client_new ()" link="UrfClient.html#urf-client-new"/>
     <function name="urf_client_error_quark ()" link="UrfClient.html#urf-client-error-quark"/>
     <function name="urf_client_error_get_type ()" link="UrfClient.html#urf-client-error-get-type"/>
+    <function name="urf_client_enumerate_devices_sync ()" link="UrfClient.html#urf-client-enumerate-devices-sync"/>
     <function name="urf_client_get_devices ()" link="UrfClient.html#urf-client-get-devices"/>
     <function name="urf_client_set_block ()" link="UrfClient.html#urf-client-set-block"/>
     <function name="urf_client_set_block_idx ()" link="UrfClient.html#urf-client-set-block-idx"/>
@@ -56,7 +65,6 @@
     <function name="The &quot;device-changed&quot; signal" link="UrfClient.html#UrfClient-device-changed"/>
     <function name="The &quot;device-removed&quot; signal" link="UrfClient.html#UrfClient-device-removed"/>
     <function name="The &quot;rf-key-pressed&quot; signal" link="UrfClient.html#UrfClient-rf-key-pressed"/>
-    <function name="enum UrfDeviceType" link="UrfDevice.html#UrfDeviceType"/>
     <function name="UrfDevice" link="UrfDevice.html#UrfDevice-struct"/>
     <function name="UrfDeviceClass" link="UrfDevice.html#UrfDeviceClass"/>
     <function name="urf_device_new ()" link="UrfDevice.html#urf-device-new"/>
@@ -65,7 +73,14 @@
     <function name="The &quot;hard&quot; property" link="UrfDevice.html#UrfDevice--hard"/>
     <function name="The &quot;index&quot; property" link="UrfDevice.html#UrfDevice--index"/>
     <function name="The &quot;name&quot; property" link="UrfDevice.html#UrfDevice--name"/>
+    <function name="The &quot;platform&quot; property" link="UrfDevice.html#UrfDevice--platform"/>
     <function name="The &quot;soft&quot; property" link="UrfDevice.html#UrfDevice--soft"/>
     <function name="The &quot;type&quot; property" link="UrfDevice.html#UrfDevice--type"/>
+    <function name="UrfKillswitch" link="UrfKillswitch.html#UrfKillswitch-struct"/>
+    <function name="UrfKillswitchClass" link="UrfKillswitch.html#UrfKillswitchClass"/>
+    <function name="urf_killswitch_new ()" link="UrfKillswitch.html#urf-killswitch-new"/>
+    <function name="urf_killswitch_get_switch_type ()" link="UrfKillswitch.html#urf-killswitch-get-switch-type"/>
+    <function name="The &quot;state&quot; property" link="UrfKillswitch.html#UrfKillswitch--state"/>
+    <function name="The &quot;state-changed&quot; signal" link="UrfKillswitch.html#UrfKillswitch-state-changed"/>
   </functions>
 </book>
