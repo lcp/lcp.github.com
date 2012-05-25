@@ -8,7 +8,7 @@
 <link rel="up" href="ref-dbus.html" title="D-Bus API Reference">
 <link rel="prev" href="URfkill.html" title="org.freedesktop.URfkill">
 <link rel="next" href="Killswitch.html" title="org.freedesktop.URfkill.Killswitch">
-<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -32,7 +32,7 @@
                   <a href="#Device.signals" class="shortcut">Signals</a>
 </td></tr>
 </table>
-<div class="refentry" title="org.freedesktop.URfkill.Device">
+<div class="refentry">
 <a name="Device"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -41,25 +41,25 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv" title="Methods">
+<div class="refsynopsisdiv">
 <h2>Methods</h2>
 <pre class="synopsis"></pre>
 </div>
-<div class="refsect1" title="Signals">
-<a name="id2569169"></a><h2>Signals</h2>
+<div class="refsect1">
+<a name="id2569660"></a><h2>Signals</h2>
 <pre class="synopsis"><a class="link" href="Device.html#Device::Changed">Changed</a> ()
 </pre>
 </div>
-<div class="refsect1" title="Implemented Interfaces">
-<a name="id2594465"></a><h2>Implemented Interfaces</h2>
+<div class="refsect1">
+<a name="id2598363"></a><h2>Implemented Interfaces</h2>
 <p>
     Objects implementing org.freedesktop.URfkill.Device also implements
     org.freedesktop.DBus.Introspectable,
     org.freedesktop.DBus.Properties
     </p>
 </div>
-<div class="refsect1" title="Properties">
-<a name="id2598085"></a><h2>Properties</h2>
+<div class="refsect1">
+<a name="id2596043"></a><h2>Properties</h2>
 <pre class="synopsis"><a class="link" href="Device.html#Device:index">'index'</a>    read      'u'
 <a class="link" href="Device.html#Device:type">'type'</a>     read      'u'
 <a class="link" href="Device.html#Device:name">'name'</a>     read      's'
@@ -68,8 +68,8 @@
 <a class="link" href="Device.html#Device:platform">'platform'</a> read      'b'
 </pre>
 </div>
-<div class="refsect1" title="Description">
-<a name="id2586486"></a><h2>Description</h2>
+<div class="refsect1">
+<a name="id2587700"></a><h2>Description</h2>
 <p>
       
         </p>
@@ -88,36 +88,13 @@
 <p>
           </p>
 <div class="informalexample"><pre class="programlisting">
-$ dbus-send --print-reply \
-            --system \
-            --dest=org.freedesktop.URfkill \
-            /org/freedesktop/URfkill/devices/0 \
-            org.freedesktop.DBus.Properties.GetAll \
-            string:org.freedesktop.URfkill.Device
+$ gdbus call -y \
+             -d org.freedesktop.URfkill \
+             -o /org/freedesktop/URfkill/devices/0 \
+             -m org.freedesktop.DBus.Properties.GetAll \
+             "org.freedesktop.URfkill.Device"
 
-method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
-   array [
-      dict entry(
-         string "index"
-         variant             uint32 0
-      )
-      dict entry(
-         string "type"
-         variant             uint32 2
-      )
-      dict entry(
-         string "name"
-         variant             string "tpacpi_bluetooth_sw"
-      )
-      dict entry(
-         string "soft"
-         variant             boolean true
-      )
-      dict entry(
-         string "hard"
-         variant             boolean true
-      )
-   ]
+({'index': &lt;uint32 0&gt;, 'type': &lt;uint32 2&gt;, 'name': &lt;'tpacpi_bluetooth_sw'&gt;, 'soft': &lt;true&gt;, 'hard': &lt;true&gt;, 'platform': &lt;true&gt;},)
             </pre></div>
 <p>
         </p>
@@ -125,28 +102,32 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
       
     </p>
 </div>
-<div class="refsect1" title="Details">
-<a name="id2600720"></a><h2>Details</h2>
+<div class="refsect1">
+<a name="id2585794"></a><h2>Details</h2>
 </div>
-<div class="refsect1" title="Signal Details">
-<a name="id2600732"></a><h2>Signal Details</h2>
-<div class="refsect2" title="The Changed signal">
-<a name="id2600740"></a><h3>
+<div class="refsect1">
+<a name="id2585806"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="id2585815"></a><h3>
 <a name="Device::Changed"></a>The Changed signal</h3>
 <pre class="programlisting">Changed ()</pre>
 </div>
 <p>
             Emitted when a property of the device is changed.
           </p>
+<p>
+	    Note: This signal is deprecated since 0.4.0. Use the standard signal,
+                  PropertiesChanged from org.freedesktop.DBus.Properties instead.
+          </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">
 <tbody></tbody>
 </table></div>
 </div>
-<div class="refsect1" title="Property Details">
-<a name="id2573297"></a><h2>Property Details</h2>
-<div class="refsect2" title='The "index" property'>
-<a name="id2573305"></a><h3>
+<div class="refsect1">
+<a name="id2585855"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="id2585863"></a><h3>
 <a name="Device:index"></a>The "index" property</h3>
 <pre class="programlisting">'index'  read      'u'
 </pre>
@@ -159,8 +140,8 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 <tbody></tbody>
 </table></div>
 <hr>
-<div class="refsect2" title='The "type" property'>
-<a name="id2573336"></a><h3>
+<div class="refsect2">
+<a name="id2579805"></a><h3>
 <a name="Device:type"></a>The "type" property</h3>
 <pre class="programlisting">'type'  read      'u'
 </pre>
@@ -191,8 +172,8 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 <tbody></tbody>
 </table></div>
 <hr>
-<div class="refsect2" title='The "name" property'>
-<a name="id2573427"></a><h3>
+<div class="refsect2">
+<a name="id2579896"></a><h3>
 <a name="Device:name"></a>The "name" property</h3>
 <pre class="programlisting">'name'  read      's'
 </pre>
@@ -205,8 +186,8 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 <tbody></tbody>
 </table></div>
 <hr>
-<div class="refsect2" title='The "soft" property'>
-<a name="id2603094"></a><h3>
+<div class="refsect2">
+<a name="id2579648"></a><h3>
 <a name="Device:soft"></a>The "soft" property</h3>
 <pre class="programlisting">'soft'  read      'b'
 </pre>
@@ -219,8 +200,8 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 <tbody></tbody>
 </table></div>
 <hr>
-<div class="refsect2" title='The "hard" property'>
-<a name="id2603125"></a><h3>
+<div class="refsect2">
+<a name="id2579680"></a><h3>
 <a name="Device:hard"></a>The "hard" property</h3>
 <pre class="programlisting">'hard'  read      'b'
 </pre>
@@ -233,8 +214,8 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 <tbody></tbody>
 </table></div>
 <hr>
-<div class="refsect2" title='The "platform" property'>
-<a name="id2603157"></a><h3>
+<div class="refsect2">
+<a name="id2579711"></a><h3>
 <a name="Device:platform"></a>The "platform" property</h3>
 <pre class="programlisting">'platform'  read      'b'
 </pre>
@@ -250,6 +231,6 @@ method return sender=:1.164 -&gt; dest=:1.169 reply_serial=2
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.15</div>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

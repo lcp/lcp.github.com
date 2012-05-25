@@ -8,7 +8,7 @@
 <link rel="up" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
 <link rel="prev" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
 <link rel="next" href="UrfClient.html" title="UrfClient">
-<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -26,7 +26,7 @@
                   <a href="#urfkill-UrfEnum.description" class="shortcut">Description</a>
 </td></tr>
 </table>
-<div class="refentry" title="UrfEnum">
+<div class="refentry">
 <a name="urfkill-UrfEnum"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -35,100 +35,31 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv" title="Synopsis">
+<div class="refsynopsisdiv">
 <a name="urfkill-UrfEnum.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
 #include &lt;urfkill.h&gt;
 
-enum                <a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType">UrfSwitchType</a>;
-enum                <a class="link" href="urfkill-UrfEnum.html#UrfSwitchState" title="enum UrfSwitchState">UrfSwitchState</a>;
+enum                <a class="link" href="urfkill-UrfEnum.html#UrfEnumState" title="enum UrfEnumState">UrfEnumState</a>;
+enum                <a class="link" href="urfkill-UrfEnum.html#UrfEnumType" title="enum UrfEnumType">UrfEnumType</a>;
 </pre>
 </div>
-<div class="refsect1" title="Description">
+<div class="refsect1">
 <a name="urfkill-UrfEnum.description"></a><h2>Description</h2>
 <p>
 This header stores the definition of switch types and switch states
 </p>
 </div>
-<div class="refsect1" title="Details">
+<div class="refsect1">
 <a name="urfkill-UrfEnum.details"></a><h2>Details</h2>
-<div class="refsect2" title="enum UrfSwitchType">
-<a name="UrfSwitchType"></a><h3>enum UrfSwitchType</h3>
+<div class="refsect2">
+<a name="UrfEnumState"></a><h3>enum UrfEnumState</h3>
 <pre class="programlisting">typedef enum {
-	URFSWITCH_TYPE_ALL = 0,
-	URFSWITCH_TYPE_WLAN,
-	URFSWITCH_TYPE_BLUETOOTH,
-	URFSWITCH_TYPE_UWB,
-	URFSWITCH_TYPE_WIMAX,
-	URFSWITCH_TYPE_WWAN,
-	URFSWITCH_TYPE_GPS,
-	URFSWITCH_TYPE_FM,
-	NUM_URFSWITCH_TYPES,
-} UrfSwitchType;
-</pre>
-<p>
-The type of the rfkill device following the definition in &lt;linux/rfkill.h&gt;
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-ALL:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_ALL</code></span></p></td>
-<td>toggles all switches (requests only - not a switch type)
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-WLAN:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_WLAN</code></span></p></td>
-<td>switch is on a 802.11 wireless network device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-BLUETOOTH:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_BLUETOOTH</code></span></p></td>
-<td>switch is on a bluetooth device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-UWB:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_UWB</code></span></p></td>
-<td>switch is on a ultra wideband device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-WIMAX:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_WIMAX</code></span></p></td>
-<td>switch is on a WiMAX device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-WWAN:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_WWAN</code></span></p></td>
-<td>switch is on a wireless WAN device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-GPS:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_GPS</code></span></p></td>
-<td>switch is on a GPS device.
-</td>
-</tr>
-<tr>
-<td><p><a name="URFSWITCH-TYPE-FM:CAPS"></a><span class="term"><code class="literal">URFSWITCH_TYPE_FM</code></span></p></td>
-<td>switch is on a FM radio device.
-</td>
-</tr>
-<tr>
-<td><p><a name="NUM-URFSWITCH-TYPES:CAPS"></a><span class="term"><code class="literal">NUM_URFSWITCH_TYPES</code></span></p></td>
-<td>number of defined rfkill types
-</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2" title="enum UrfSwitchState">
-<a name="UrfSwitchState"></a><h3>enum UrfSwitchState</h3>
-<pre class="programlisting">typedef enum {
-	URFSWITCH_STATE_NO_ADAPTER = -1,
-	URFSWITCH_STATE_UNBLOCKED = 0,
-	URFSWITCH_STATE_SOFT_BLOCKED,
-	URFSWITCH_STATE_HARD_BLOCKED,
-} UrfSwitchState;
+	URF_ENUM_STATE_NO_ADAPTER = -1,
+	URF_ENUM_STATE_UNBLOCKED = 0,
+	URF_ENUM_STATE_SOFT_BLOCKED,
+	URF_ENUM_STATE_HARD_BLOCKED,
+} UrfEnumState;
 </pre>
 <p>
 The state of the switch
@@ -137,36 +68,105 @@ The state of the switch
 <col align="left" valign="top">
 <tbody>
 <tr>
-<td><p><a name="URFSWITCH-STATE-NO-ADAPTER:CAPS"></a><span class="term"><code class="literal">URFSWITCH_STATE_NO_ADAPTER</code></span></p></td>
+<td><p><a name="URF-ENUM-STATE-NO-ADAPTER:CAPS"></a><span class="term"><code class="literal">URF_ENUM_STATE_NO_ADAPTER</code></span></p></td>
 <td>switch doesn't exist
 </td>
 </tr>
 <tr>
-<td><p><a name="URFSWITCH-STATE-UNBLOCKED:CAPS"></a><span class="term"><code class="literal">URFSWITCH_STATE_UNBLOCKED</code></span></p></td>
+<td><p><a name="URF-ENUM-STATE-UNBLOCKED:CAPS"></a><span class="term"><code class="literal">URF_ENUM_STATE_UNBLOCKED</code></span></p></td>
 <td>switch is unblocked
 </td>
 </tr>
 <tr>
-<td><p><a name="URFSWITCH-STATE-SOFT-BLOCKED:CAPS"></a><span class="term"><code class="literal">URFSWITCH_STATE_SOFT_BLOCKED</code></span></p></td>
+<td><p><a name="URF-ENUM-STATE-SOFT-BLOCKED:CAPS"></a><span class="term"><code class="literal">URF_ENUM_STATE_SOFT_BLOCKED</code></span></p></td>
 <td>switch is soft-blocked.
 </td>
 </tr>
 <tr>
-<td><p><a name="URFSWITCH-STATE-HARD-BLOCKED:CAPS"></a><span class="term"><code class="literal">URFSWITCH_STATE_HARD_BLOCKED</code></span></p></td>
+<td><p><a name="URF-ENUM-STATE-HARD-BLOCKED:CAPS"></a><span class="term"><code class="literal">URF_ENUM_STATE_HARD_BLOCKED</code></span></p></td>
 <td>switch is hard-blocked.
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
+<hr>
+<div class="refsect2">
+<a name="UrfEnumType"></a><h3>enum UrfEnumType</h3>
+<pre class="programlisting">typedef enum {
+	URF_ENUM_TYPE_ALL = 0,
+	URF_ENUM_TYPE_WLAN,
+	URF_ENUM_TYPE_BLUETOOTH,
+	URF_ENUM_TYPE_UWB,
+	URF_ENUM_TYPE_WIMAX,
+	URF_ENUM_TYPE_WWAN,
+	URF_ENUM_TYPE_GPS,
+	URF_ENUM_TYPE_FM,
+	URF_ENUM_TYPE_NUM,
+} UrfEnumType;
+</pre>
+<p>
+The type of the rfkill device following the definition in &lt;linux/rfkill.h&gt;
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-ALL:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_ALL</code></span></p></td>
+<td>toggles all switches (requests only - not a switch type)
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-WLAN:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_WLAN</code></span></p></td>
+<td>switch is on a 802.11 wireless network device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-BLUETOOTH:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_BLUETOOTH</code></span></p></td>
+<td>switch is on a bluetooth device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-UWB:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_UWB</code></span></p></td>
+<td>switch is on a ultra wideband device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-WIMAX:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_WIMAX</code></span></p></td>
+<td>switch is on a WiMAX device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-WWAN:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_WWAN</code></span></p></td>
+<td>switch is on a wireless WAN device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-GPS:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_GPS</code></span></p></td>
+<td>switch is on a GPS device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-FM:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_FM</code></span></p></td>
+<td>switch is on a FM radio device.
+</td>
+</tr>
+<tr>
+<td><p><a name="URF-ENUM-TYPE-NUM:CAPS"></a><span class="term"><code class="literal">URF_ENUM_TYPE_NUM</code></span></p></td>
+<td>number of defined rfkill types
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
-<div class="refsect1" title="See Also">
+</div>
+<div class="refsect1">
 <a name="urfkill-UrfEnum.see-also"></a><h2>See Also</h2>
 <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a>, <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.15</div>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

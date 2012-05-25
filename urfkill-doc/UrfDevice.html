@@ -8,7 +8,7 @@
 <link rel="up" href="liburfkill-glib.html" title="liburfkill-glib GObjects">
 <link rel="prev" href="UrfClient.html" title="UrfClient">
 <link rel="next" href="UrfKillswitch.html" title="UrfKillswitch">
-<meta name="generator" content="GTK-Doc V1.15 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -30,7 +30,7 @@
                   <a href="#UrfDevice.properties" class="shortcut">Properties</a>
 </td></tr>
 </table>
-<div class="refentry" title="UrfDevice">
+<div class="refentry">
 <a name="UrfDevice"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -39,29 +39,29 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv" title="Synopsis">
+<div class="refsynopsisdiv">
 <a name="UrfDevice.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
 #include &lt;urfkill.h&gt;
 
-                    <a class="link" href="UrfDevice.html#UrfDevice-struct" title="UrfDevice">UrfDevice</a>;
-                    <a class="link" href="UrfDevice.html#UrfDeviceClass" title="UrfDeviceClass">UrfDeviceClass</a>;
+struct              <a class="link" href="UrfDevice.html#UrfDevice-struct" title="struct UrfDevice">UrfDevice</a>;
+struct              <a class="link" href="UrfDevice.html#UrfDeviceClass" title="struct UrfDeviceClass">UrfDeviceClass</a>;
+const <span class="returnvalue">char</span> *        <a class="link" href="UrfDevice.html#urf-device-get-object-path" title="urf_device_get_object_path ()">urf_device_get_object_path</a>          (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>);
 <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="returnvalue">UrfDevice</span></a> *         <a class="link" href="UrfDevice.html#urf-device-new" title="urf_device_new ()">urf_device_new</a>                      (<em class="parameter"><code><span class="type">void</span></code></em>);
 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="UrfDevice.html#urf-device-set-object-path-sync" title="urf_device_set_object_path_sync ()">urf_device_set_object_path_sync</a>     (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *object_path</code></em>,
                                                          <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
-const <span class="returnvalue">char</span> *        <a class="link" href="UrfDevice.html#urf-device-get-object-path" title="urf_device_get_object_path ()">urf_device_get_object_path</a>          (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>);
 </pre>
 </div>
-<div class="refsect1" title="Object Hierarchy">
+<div class="refsect1">
 <a name="UrfDevice.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
   <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
    +----UrfDevice
 </pre>
 </div>
-<div class="refsect1" title="Properties">
+<div class="refsect1">
 <a name="UrfDevice.properties"></a><h2>Properties</h2>
 <pre class="synopsis">
   "<a class="link" href="UrfDevice.html#UrfDevice--hard" title='The "hard" property'>hard</a>"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
@@ -72,34 +72,57 @@ const <span class="returnvalue">char</span> *        <a class="link" href="UrfDe
   "<a class="link" href="UrfDevice.html#UrfDevice--type" title='The "type" property'>type</a>"                     <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
 </pre>
 </div>
-<div class="refsect1" title="Description">
+<div class="refsect1">
 <a name="UrfDevice.description"></a><h2>Description</h2>
 <p>
 A helper GObject for accessing rfkill devices
 </p>
 </div>
-<div class="refsect1" title="Details">
+<div class="refsect1">
 <a name="UrfDevice.details"></a><h2>Details</h2>
-<div class="refsect2" title="UrfDevice">
-<a name="UrfDevice-struct"></a><h3>UrfDevice</h3>
-<pre class="programlisting">typedef struct _UrfDevice UrfDevice;</pre>
+<div class="refsect2">
+<a name="UrfDevice-struct"></a><h3>struct UrfDevice</h3>
+<pre class="programlisting">struct UrfDevice;</pre>
 <p>
 The UrfDevice struct contains only private fields
 and should not be directly accessed.
 </p>
 </div>
 <hr>
-<div class="refsect2" title="UrfDeviceClass">
-<a name="UrfDeviceClass"></a><h3>UrfDeviceClass</h3>
-<pre class="programlisting">typedef struct {
-} UrfDeviceClass;
+<div class="refsect2">
+<a name="UrfDeviceClass"></a><h3>struct UrfDeviceClass</h3>
+<pre class="programlisting">struct UrfDeviceClass {
+};
 </pre>
 <p>
 Class structure for <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a>
 </p>
 </div>
 <hr>
-<div class="refsect2" title="urf_device_new ()">
+<div class="refsect2">
+<a name="urf-device-get-object-path"></a><h3>urf_device_get_object_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        urf_device_get_object_path          (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>);</pre>
+<p>
+Get the object path for the device.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>device</code></em> :</span></p></td>
+<td>a <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the object path, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.2.0</p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="urf-device-new"></a><h3>urf_device_new ()</h3>
 <pre class="programlisting"><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="returnvalue">UrfDevice</span></a> *         urf_device_new                      (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
@@ -109,35 +132,31 @@ Creates a new <a class="link" href="UrfDevice.html" title="UrfDevice"><span clas
 <col align="left" valign="top">
 <tbody><tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td> a new <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> object.
-
-</td>
+<td>a new <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> object.</td>
 </tr></tbody>
 </table></div>
 <p class="since">Since 0.2.0</p>
 </div>
 <hr>
-<div class="refsect2" title="urf_device_set_object_path_sync ()">
+<div class="refsect2">
 <a name="urf-device-set-object-path-sync"></a><h3>urf_device_set_object_path_sync ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            urf_device_set_object_path_sync     (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *object_path</code></em>,
                                                          <em class="parameter"><code><a href="../gio/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Set the object path of the object and fill up the intial properties.
+Set the object path of the object and fill up the initial properties.
 </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>device</code></em> :</span></p></td>
-<td>a <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> instance
-</td>
+<td>a <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> instance</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>object_path</code></em> :</span></p></td>
-<td>the <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> object path
-</td>
+<td>the <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> object path</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>cancellable</code></em> :</span></p></td>
@@ -151,43 +170,17 @@ Set the object path of the object and fill up the intial properties.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> for success, else <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><span class="type">FALSE</span></a> and <em class="parameter"><code>error</code></em> is used
-
-</td>
-</tr>
-</tbody>
-</table></div>
-<p class="since">Since 0.2.0</p>
-</div>
-<hr>
-<div class="refsect2" title="urf_device_get_object_path ()">
-<a name="urf-device-get-object-path"></a><h3>urf_device_get_object_path ()</h3>
-<pre class="programlisting">const <span class="returnvalue">char</span> *        urf_device_get_object_path          (<em class="parameter"><code><a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> *device</code></em>);</pre>
-<p>
-Get the object path for the device.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>device</code></em> :</span></p></td>
-<td>a <a class="link" href="UrfDevice.html" title="UrfDevice"><span class="type">UrfDevice</span></a> instance
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td> the object path, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
-
-</td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><span class="type">TRUE</span></a> for success, else <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><span class="type">FALSE</span></a> and <em class="parameter"><code>error</code></em> is used</td>
 </tr>
 </tbody>
 </table></div>
 <p class="since">Since 0.2.0</p>
 </div>
 </div>
-<div class="refsect1" title="Property Details">
+<div class="refsect1">
 <a name="UrfDevice.property-details"></a><h2>Property Details</h2>
-<div class="refsect2" title='The "hard" property'>
+<div class="refsect2">
 <a name="UrfDevice--hard"></a><h3>The <code class="literal">"hard"</code> property</h3>
 <pre class="programlisting">  "hard"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
@@ -198,7 +191,7 @@ is on or not.
 <p class="since">Since 0.2.0</p>
 </div>
 <hr>
-<div class="refsect2" title='The "index" property'>
+<div class="refsect2">
 <a name="UrfDevice--index"></a><h3>The <code class="literal">"index"</code> property</h3>
 <pre class="programlisting">  "index"                    <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
 <p>
@@ -208,7 +201,7 @@ The index of the rfkill device assigned by the kernel rfkill subsystem
 <p class="since">Since 0.2.0</p>
 </div>
 <hr>
-<div class="refsect2" title='The "name" property'>
+<div class="refsect2">
 <a name="UrfDevice--name"></a><h3>The <code class="literal">"name"</code> property</h3>
 <pre class="programlisting">  "name"                     <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
 <p>
@@ -218,7 +211,7 @@ The name of the rfkill device defined by the driver
 <p class="since">Since 0.2.0</p>
 </div>
 <hr>
-<div class="refsect2" title='The "platform" property'>
+<div class="refsect2">
 <a name="UrfDevice--platform"></a><h3>The <code class="literal">"platform"</code> property</h3>
 <pre class="programlisting">  "platform"                 <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
@@ -229,7 +222,7 @@ a platform driver or not.
 <p class="since">Since 0.3.0</p>
 </div>
 <hr>
-<div class="refsect2" title='The "soft" property'>
+<div class="refsect2">
 <a name="UrfDevice--soft"></a><h3>The <code class="literal">"soft"</code> property</h3>
 <pre class="programlisting">  "soft"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
@@ -240,24 +233,24 @@ is on or not.
 <p class="since">Since 0.3.0</p>
 </div>
 <hr>
-<div class="refsect2" title='The "type" property'>
+<div class="refsect2">
 <a name="UrfDevice--type"></a><h3>The <code class="literal">"type"</code> property</h3>
 <pre class="programlisting">  "type"                     <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
 <p>
-The type of the rfkill device. See <a class="link" href="urfkill-UrfEnum.html#UrfSwitchType" title="enum UrfSwitchType"><span class="type">UrfSwitchType</span></a>.
+The type of the rfkill device. See <a class="link" href="urfkill-UrfEnum.html#UrfEnumType" title="enum UrfEnumType"><span class="type">UrfEnumType</span></a>.
 </p>
 <p>Allowed values: &lt;= 7</p>
 <p>Default value: 0</p>
 <p class="since">Since 0.2.0</p>
 </div>
 </div>
-<div class="refsect1" title="See Also">
+<div class="refsect1">
 <a name="UrfDevice.see-also"></a><h2>See Also</h2>
 <a class="link" href="UrfClient.html" title="UrfClient"><span class="type">UrfClient</span></a>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.15</div>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>
